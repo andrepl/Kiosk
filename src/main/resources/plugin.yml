@@ -1,0 +1,186 @@
+name: ${project.name}
+author: ${project.authors}
+main: ${project.main}
+version: ${project.version}
+
+permissions:
+
+  # actions
+  kiosk.place:
+    default: op
+    description: place 'kiosk' frames
+  kiosk.select:
+    default: op
+    description: select shops by hitting them.
+  kiosk.craft:
+    default: op
+    description: craft kiosk's
+
+  # /kiosk command
+  kiosk.command:
+    default: op
+    description: the root kiosk command
+  kiosk.command.info:
+    description: display info about the selected shop
+    default: op
+  kiosk.command.buy:
+    description: buy items from shops
+    default: op
+  kiosk.command.sell:
+    description: sell items to shops
+    default: op
+  kiosk.command.teleport:
+    description: teleport to a shop
+    default: op
+  kiosk.command.find:
+    description: search for shops
+    default: op
+  kiosk.command.results:
+    description: view search results
+    default: op
+  kiosk.command.stock:
+    description: manage the shops stock
+    default: op
+  kiosk.command.balance:
+    description: view the shops balance
+    default: op
+  kiosk.command.withdraw:
+    description: withdraw money from the shop
+    default: op
+  kiosk.command.deposit:
+    description: deposit money into the shop
+    default: op
+  kiosk.command.destroy:
+    description: destroy a shop
+    default: op
+  kiosk.command.spawn:
+    description: spawn kiosk items
+    default: op
+  kiosk.command.select:
+    description: select a kiosk by id
+    default: op
+
+  # /fs set command
+  kiosk.command.set:
+    description: change shop settings
+    default: op
+  kiosk.command.set.selling:
+    description: set a shop to 'selling' mode with price and qty
+    default: op
+  kiosk.command.set.buying:
+    description: set a shop to 'buying' mode with price and qty
+    default: op
+  kiosk.command.set.name:
+    description: rename a shop
+    default: op
+  kiosk.command.set.item:
+    description: change the item a shop buys/sellss
+    default: op
+  kiosk.command.set.icon:
+    description: "set the shop's icon"
+    default: op
+  kiosk.command.set.border:
+    description: "set the shop's chat border color"
+    default: op
+  kiosk.command.set.private:
+    description: toggle/set a shop's private setting
+    default: op
+  kiosk.command.set.depositaccount:
+    description: allow players to set an account in which to deposit proceeds from 'selling' shops
+    default: op
+  # be careful
+  kiosk.command.set.adminshop:
+    description: set/toggle 'adminshop' status (infinite funds and stock)
+    default: op
+
+  # /fs staff command
+  kiosk.command.staff:
+    description: manage shop staff
+    default: op
+  kiosk.command.staff.add:
+    description: add staff members
+    default: op
+  kiosk.command.staff.remove:
+    description: remove staff members
+    default: op
+  kiosk.command.staff.copy:
+    description: copy a shop's staff
+    default: op
+  kiosk.command.staff.paste:
+    description: paste previously copied staff to the selected shop
+    default: op
+  kiosk.command.staff.permdefaults:
+    description: modify the default permission set given to staff members
+    default: op
+  kiosk.command.staff.member.copy:
+    description: copy another staff members permissions
+    default: op
+  kiosk.command.staff.member.grant:
+    description: grant permissions to a staff member
+    default: op
+  kiosk.command.staff.member.revoke:
+    description: revoke permissions from a staff member
+    default: op
+
+  # Convenience Permission nodes
+  kiosk.admin:
+    default: op
+    description: a collection of admin-level permissions
+    children:
+      kiosk.command.set.adminshop: true
+      kiosk.command.select: true
+      kiosk.command.spawn: true
+
+  kiosk.shopper:
+    default: op
+    description: a collection of 'shopper' permissions
+    children:
+      kiosk.select: true
+      kiosk.command: true
+      kiosk.command.info: true
+      kiosk.command.buy: true
+      kiosk.command.sell: true
+      kiosk.command.find: true
+      kiosk.command.results: true
+
+  kiosk.shopkeeper:
+    default: op
+    description: a collection of shopkeeper' permissions
+    children:
+      kiosk.shopper: true
+      kiosk.place: true
+      kiosk.command.set: true
+      kiosk.command.set.selling: true
+      kiosk.command.set.buying: true
+      kiosk.command.set.name: true
+      kiosk.command.set.item: true
+      kiosk.command.set.private: true
+      kiosk.command.destroy: true
+      kiosk.command.stock: true
+      kiosk.command.withdraw: true
+      kiosk.command.deposit: true
+
+
+  kiosk.shopkeeper.advanced:
+    default: op
+    description: a collection of advanced shopkeeper permissions
+    children:
+      kiosk.shopkeeper: true
+      kiosk.command.set.depositaccount: true
+      kiosk.command.set.icon: true
+      kiosk.command.set.color: true
+      kiosk.command.staff: true
+      kiosk.command.staff.add: true
+      kiosk.command.staff.remove: true
+      kiosk.command.staff.copy: true
+      kiosk.command.staff.paste: true
+      kiosk.command.staff.permdefaults: true
+      kiosk.command.staff.member.copy: true
+      kiosk.command.staff.member.grant: true
+      kiosk.command.staff.member.revoke: true
+
+
+commands:
+  kiosk:
+    aliases: [shop, kiosk]
+    description: The main Kiosk command

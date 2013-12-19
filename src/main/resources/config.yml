@@ -1,0 +1,21 @@
+debug-mode: true
+show-stacktraces: true
+
+enabled-worlds:
+ - world
+
+language: en_US
+
+default-staff-permissions:
+  - addstock
+  - deposit
+  - display
+
+allow-crafting: true
+recipe:
+  shape:
+    - f
+    - s
+  legend:
+    f: item_frame
+    s: sign
