@@ -53,7 +53,7 @@ public class PlayerListener implements Listener {
 					Entity damager = ((EntityDamageByEntityEvent) event).getDamager();
 					if (damager instanceof Player) {
 						Player player = (Player) damager;
-						if (player.hasPermission("frameshops.select")) {
+						if (player.hasPermission("kiosk.select")) {
 							Util.send(player, InfoCommand.renderShopInfo(plugin, player, shop).toArray(new Object[0]));
 							plugin.setSelectedShop(player, shop);
 						} else {
@@ -96,7 +96,7 @@ public class PlayerListener implements Listener {
 					event.setCancelled(true);
 				}
 			}
-			if (event.getPlayer().hasPermission("frameshops.select")) {
+			if (event.getPlayer().hasPermission("kiosk.select")) {
 				plugin.setSelectedShop(event.getPlayer(), shop);
 				shop.updateSign();
 			}
@@ -110,20 +110,20 @@ public class PlayerListener implements Listener {
 				if (event.getItem().hasItemMeta()) {
 					ItemMeta meta = event.getItem().getItemMeta();
 					if (meta.hasLore() && meta.getLore().get(0).equals(Kiosk.LORE_1)) {
-						event.getPlayer().setMetadata("placed-frameshop", new FixedMetadataValue(plugin, true));
+						event.getPlayer().setMetadata("placed-kiosk", new FixedMetadataValue(plugin, true));
 						return;
 					}
 				}
-				event.getPlayer().removeMetadata("placed-frameshop", plugin);
+				event.getPlayer().removeMetadata("placed-kiosk", plugin);
 			}
 		}
 	}
 
 	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerPlaceFrame(HangingPlaceEvent event) {
-		if (event.getPlayer().hasMetadata("placed-frameshop")) {
-			event.getPlayer().removeMetadata("placed-frameshop", plugin);
-			if (!event.getPlayer().hasPermission("frameshops.place")) {
+		if (event.getPlayer().hasMetadata("placed-kiosk")) {
+			event.getPlayer().removeMetadata("placed-kiosk", plugin);
+			if (!event.getPlayer().hasPermission("kiosk.place")) {
 				event.setCancelled(true);
 				return;
 			}
@@ -156,7 +156,7 @@ public class PlayerListener implements Listener {
 	public void onCraft(PrepareItemCraftEvent event) {
 		plugin.debug("Crafting");
 		if (event.getRecipe().getResult().equals(plugin.getRecipe().getResult())) {
-			plugin.debug("Crafting FrameShop");
+			plugin.debug("Crafting Kiosk");
 			if (!plugin.getConfig().getBoolean("allow-crafting")) {
 				plugin.debug(" Disabled in config.");
 				event.getInventory().setResult(new ItemStack(Material.AIR));
@@ -167,7 +167,7 @@ public class PlayerListener implements Listener {
 			plugin.debug("Crafter is " + player);
 			if (player instanceof Player) {
 				plugin.debug("Crafter is a  player");
-				if (!(((Player) player).hasPermission("frameshops.craft"))) {
+				if (!(((Player) player).hasPermission("kiosk.craft"))) {
 					plugin.debug("Denied by perms");
 					event.getInventory().setResult(new ItemStack(Material.AIR));
 				} else {

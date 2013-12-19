@@ -119,7 +119,7 @@ public abstract class Datastore {
 	public void search(ShopType type, HashMap<FindCommand.SearchField, LinkedList<String>> searchCriteria, String searchString, CommandSender sender) {
 		SearchTask task = new SearchTask(plugin, type, allShopIds(), searchCriteria, searchString, sender);
 		if (sender instanceof Player) {
-			((Player) sender).setMetadata("frameshops-searchtask", new FixedMetadataValue(plugin, task));
+			((Player) sender).setMetadata("kiosk-searchtask", new FixedMetadataValue(plugin, task));
 		}
 		searchRunner.add(task);
 	}

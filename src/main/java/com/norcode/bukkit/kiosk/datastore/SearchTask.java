@@ -49,7 +49,7 @@ public class SearchTask {
 		if (!active) {
 			return new Text(ChatColor.DARK_GRAY+ "" + ChatColor.BOLD + "<<").setHoverText("You are already viewing the first page");
 		} else {
-			return new Text(ChatColor.GOLD + "" + ChatColor.BOLD + "<<").setHoverText("Go to page " + (page-1)).setClick(ClickAction.RUN_COMMAND, "/frameshops results page " + (page-1));
+			return new Text(ChatColor.GOLD + "" + ChatColor.BOLD + "<<").setHoverText("Go to page " + (page-1)).setClick(ClickAction.RUN_COMMAND, "/kiosk results page " + (page-1));
 		}
 	}
 
@@ -374,8 +374,8 @@ public class SearchTask {
 	public void cancel() {
 		cancelled = true;
 		if (sender instanceof Player) {
-			if (((Player) sender).hasMetadata("frameshops-searchtask")) {
-				((Player) sender).removeMetadata("frameshops-searchtask", plugin);
+			if (((Player) sender).hasMetadata("kiosk-searchtask")) {
+				((Player) sender).removeMetadata("kiosk-searchtask", plugin);
 			}
 		}
 	}
