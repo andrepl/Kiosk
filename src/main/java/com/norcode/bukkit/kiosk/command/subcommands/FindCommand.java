@@ -44,7 +44,7 @@ public class FindCommand extends CommandHandler {
 	}
 
 	public FindCommand(Kiosk plugin) {
-		super(plugin, "find", "Search all public kiosks.", "kiosk.command.find", new String[] {"/kiosk find <needle>", "Searches all public shops for `needle` and lists matching results."});
+		super(plugin, "find", "Search all public kiosks.", "kiosk.command.find", new String[] {"/kiosk find [buying|selling] <needle> [-price <comparator> <value>] [-ench <enchantment> [<comparator> <level>]]", "Very powerful search that can be used to search for kiosks `buying` or `selling` the `needle`.", "Examples: /kiosk find selling cobble -price < 2.50", "/kiosk find selling diamond sword -ench looting >= 3"});
 	}
 
 	@Override

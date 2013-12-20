@@ -15,7 +15,7 @@ import java.util.List;
 public class BalanceCommand extends SelectedShopCommand {
 
 	public BalanceCommand(Kiosk plugin) {
-		super(plugin, "balance", "Check the balance of a kiosk.", "kiosk.command.balance", null, new String[] { "/kiosk balance <id>", "Displays the balance of kiosk `id` to the user."});
+		super(plugin, "balance", "Check the balance of a kiosk.", "kiosk.command.balance", null, new String[] { "/kiosk balance", "Displays the balance of the selected kiosk to the user."});
 	}
 
 	@Override
