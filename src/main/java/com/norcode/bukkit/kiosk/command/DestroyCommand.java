@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DestroyCommand extends SelectedShopCommand {
 	protected DestroyCommand(Kiosk plugin) {
-		super(plugin, "destroy", "destroy the selected shop", "kiosk.command.destroy", StaffPermission.DESTROY, new String[] {"Destroy Help"});
+		super(plugin, "destroy", "Destroy the selected kiosk.", "kiosk.command.destroy", StaffPermission.DESTROY, new String[] {"/kiosk destroy <id>", "Destroys kiosk with id of `id` and places any funds or items into the destroyers account."});
 	}
 
 	@Override

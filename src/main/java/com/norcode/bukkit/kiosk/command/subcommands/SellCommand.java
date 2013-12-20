@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SellCommand extends SelectedShopCommand {
 	public SellCommand(Kiosk plugin) {
-		super(plugin, "sell", "sell items to the selected shop", "kiosk.command.sell", null, new String[] {"sell help"});
+		super(plugin, "sell", "Sell items to the selected kiosk.", "kiosk.command.sell", null, new String[] {"/kiosk sell <##|all>", "Will attempt to sell `##` or `all` items to the selected kiosk."});
 	}
 
 	@Override

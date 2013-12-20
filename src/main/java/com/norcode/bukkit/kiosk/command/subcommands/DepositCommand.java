@@ -15,8 +15,8 @@ import java.util.List;
 public class DepositCommand extends SelectedShopCommand {
 
 	public DepositCommand(Kiosk plugin) {
-		super(plugin, "deposit", "deposit money into a shop account.", "kiosk.command.deposit",
-				StaffPermission.DEPOSIT, new String[] {"deposit help"});
+		super(plugin, "deposit", "Deposit money into a kiosk account.", "kiosk.command.deposit",
+				StaffPermission.DEPOSIT, new String[] {"/kiosk deposit <##>", "Deposits `##` into the kiosks account."});
 	}
 
 	@Override

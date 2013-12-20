@@ -16,7 +16,7 @@ import java.util.List;
 public class TeleportCommand extends SelectedShopCommand {
 	
 	public TeleportCommand(Kiosk plugin) {
-		super(plugin, "teleport", "Teleport to the selected shop", "kiosk.command.teleport", null, new String[] {"Teleport help"});
+		super(plugin, "teleport", "Teleport to the selected kiosk.", "kiosk.command.teleport", null, new String[] {"/kiosk teleport <id>", "Teleports the user to shop `id`."});
 	}
 
 	@Override

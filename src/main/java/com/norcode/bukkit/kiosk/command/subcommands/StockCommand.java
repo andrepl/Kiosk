@@ -14,7 +14,7 @@ import java.util.List;
 public class StockCommand extends SelectedShopCommand {
 
 	public StockCommand(Kiosk plugin) {
-		super(plugin, "stock", "Add stock to your shop", "kiosk.command.stock", null, new String[] {"stock help"});
+		super(plugin, "stock", "Add or remove stock to your kiosk's inventory.", "kiosk.command.stock", null, new String[] {"/kiosk stock", "Opens a window allowing you to deposit or withdraw items from your kiosk's inventory."});
 	}
 
 	@Override

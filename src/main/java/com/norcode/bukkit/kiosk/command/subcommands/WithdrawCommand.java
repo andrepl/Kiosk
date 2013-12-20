@@ -15,8 +15,8 @@ import java.util.List;
 public class WithdrawCommand extends SelectedShopCommand {
 
 	public WithdrawCommand(Kiosk plugin) {
-		super(plugin, "withdraw", "withdraw money from a shop account.", "kiosk.command.withdraw",
-				StaffPermission.WITHDRAW, new String[] {"withdraw help"});
+		super(plugin, "withdraw", "Withdraw money from a kiosk.", "kiosk.command.withdraw",
+				StaffPermission.WITHDRAW, new String[] {"/kiosk withdraw <##>", "Withdraws `##` from the kiosk and deposits it in the users account."});
 	}
 
 	@Override

@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class StaffPasteCommand extends SelectedShopCommand {
 	protected StaffPasteCommand(Kiosk plugin) {
-		super(plugin, "paste", "paste previously copied staff into the selected shop", "kiosk.command.staff.paste", StaffPermission.MANAGE_STAFF, new String[] {"Staff Paste help"});
+		super(plugin, "paste", "Paste previously copied staff into the selected kiosk.", "kiosk.command.staff.paste", StaffPermission.MANAGE_STAFF, new String[] {"/kiosk staff paste", "Pastes the copied staff and permissions into the selected kiosk."});
 	}
 
 	@Override

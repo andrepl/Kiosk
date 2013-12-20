@@ -13,7 +13,7 @@ import java.util.List;
 public class SpawnCommand extends PlayerCommand {
 
 	public SpawnCommand(Kiosk plugin) {
-		super(plugin, "spawn", "spawn one or more Kiosk", "kiosk.spawn", new String[] {"spawn help"});
+		super(plugin, "spawn", "Spawn one or more kiosk.", "kiosk.spawn", new String[] {"/kiosk spawn <##>", "Spawns `##` kiosks ready to be placed."});
 	}
 
 	@Override

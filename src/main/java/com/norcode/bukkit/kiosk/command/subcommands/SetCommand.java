@@ -43,7 +43,7 @@ public class SetCommand extends BaseCommand {
 	public static class SetIconCommand extends SelectedShopCommand {
 
 		public SetIconCommand(Kiosk plugin) {
-			super(plugin, "icon", "Set the shop icon.", "kiosk.command.set.icon", StaffPermission.SET_ICON, new String [] {"Set Icon Help"});
+			super(plugin, "icon", "Set the kiosk icon.", "kiosk.command.set.icon", StaffPermission.SET_ICON, new String [] {"/kiosk icon <icon_name>.", "Sets `icon_name` as the icon for the kiosk."});
 		}
 
 		@Override

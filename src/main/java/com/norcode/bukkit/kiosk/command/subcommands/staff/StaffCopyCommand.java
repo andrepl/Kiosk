@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class StaffCopyCommand extends SelectedShopCommand {
 	protected StaffCopyCommand(Kiosk plugin) {
-		super(plugin, "copy", "copy all staff members from this shop", "kiosk.command.staff.copy", StaffPermission.MANAGE_STAFF, new String[] {"Staff Copy Help"});
+		super(plugin, "copy", "Copy all staff members from this kiosk.", "kiosk.command.staff.copy", StaffPermission.MANAGE_STAFF, new String[] {"/kiosk staff copy", "Copies all staff members from the selected kiosk."});
 	}
 
 	@Override

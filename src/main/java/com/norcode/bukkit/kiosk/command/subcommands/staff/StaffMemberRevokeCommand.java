@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class StaffMemberRevokeCommand extends StaffMemberSubcommand {
 	protected StaffMemberRevokeCommand(Kiosk plugin) {
-		super(plugin, "deny", "Revoke one or more permissions from the staff member", "kiosk.command.staff.member.revoke", new String[] {"Staff revoke Help"});
+		super(plugin, "deny", "Revoke one or more permissions from the staff member.", "kiosk.command.staff.member.revoke", new String[] {"/kiosk staff [staff_user] revoke [permission]", "Revokes `permission` from `staff_user` for the selected kiosk."});
 	}
 
 	@Override

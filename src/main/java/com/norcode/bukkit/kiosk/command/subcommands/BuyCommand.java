@@ -11,7 +11,7 @@ import java.util.List;
 
 public class BuyCommand extends SelectedShopCommand {
 	public BuyCommand(Kiosk plugin) {
-		super(plugin, "buy", "buy items from the selected shop", "kiosk.command.buy", null, new String[] {"buy help"});
+		super(plugin, "buy", "Buy items from the selected kiosk.", "kiosk.command.buy", null, new String[] {"/kiosk buy <##>", "Purchases `##` items from the kiosk."});
 	}
 
 	@Override

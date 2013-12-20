@@ -40,7 +40,7 @@ import java.util.Map;
 public class InfoCommand extends SelectedShopCommand {
 
 	public InfoCommand(Kiosk plugin) {
-		super(plugin, "info", "Display information about the selected shop", "kiosk.command.info", null, new String[] {"info help"});
+		super(plugin, "info", "Display information about the selected kiosk.", "kiosk.command.info", null, new String[] {"/kiosk info.", "Displays more information on the selected kiosk to the user."});
 	}
 
 	@Override
