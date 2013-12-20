@@ -20,7 +20,7 @@ public class StaffPermDefaultsCommand extends BaseCommand {
 
 	protected StaffPermDefaultsCommand(Kiosk plugin) {
 		super(plugin, "permdefaults", "manage the default permissions for staff members",
-				"kiosk.command.staff.permdefaults", new String[] {"permdefaults help"});
+				"kiosk.command.staff.permdefaults", new String[] {"/kiosk staff permdefaults [add|remove] [permission]", "Will `add` or `remove` `permission` from the default staff permissions."});
 		registerSubcommand(new AddCommand(plugin));
 		registerSubcommand(new RemoveCommand(plugin));
 	}

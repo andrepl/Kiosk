@@ -24,7 +24,7 @@ public class ResultsCommand extends BaseCommand {
 	private class ShowCommand extends PlayerCommand {
 
 		protected ShowCommand(Kiosk plugin) {
-			super(plugin, "show", "show details about one of the search results", "kiosk.command.results", new String[] {"show help"});
+			super(plugin, "show", "Show details about one of the search results.", "kiosk.command.results", new String[] {"/kiosk show <number>", "Provides more information about result `number`."});
 		}
 
 		@Override

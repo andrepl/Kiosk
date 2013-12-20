@@ -16,7 +16,7 @@ import java.util.List;
 public class StaffMemberCopyCommand extends StaffMemberSubcommand {
 
 	protected StaffMemberCopyCommand(Kiosk plugin) {
-		super(plugin, "copy", "Copy permissions from one staff member to another", "kiosk.commands.staff.member.copy", new String[] {"Staff Copy Help"});
+		super(plugin, "copy", "Copy permissions from one staff member to another.", "kiosk.commands.staff.member.copy", new String[] {"/kiosk staff [from_staff_user] copy [to_staff_user]", "Copies all permissions for the selected shop from `from_staff_user` to `to_staff_user`."});
 	}
 
 	@Override

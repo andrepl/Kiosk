@@ -44,7 +44,7 @@ public class FindCommand extends CommandHandler {
 	}
 
 	public FindCommand(Kiosk plugin) {
-		super(plugin, "find", "search all public shops", "kiosk.command.find", new String[] {"Find Help"});
+		super(plugin, "find", "Search all public kiosks.", "kiosk.command.find", new String[] {"/kiosk find <needle>", "Searches all public shops for `needle` and lists matching results."});
 	}
 
 	@Override

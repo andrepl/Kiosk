@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class StaffMemberGrantCommand extends StaffMemberSubcommand {
 	protected StaffMemberGrantCommand(Kiosk plugin) {
-		super(plugin, "grant", "Grant one or more permissions to the staff member", "kiosk.command.staff.member.grant", new String[] {"Staff Grant Help"});
+		super(plugin, "grant", "Grant one or more permissions to the staff member.", "kiosk.command.staff.member.grant", new String[] {"/kiosk staff [staff_user] grant [permission]", "Grants `permission` to `staff_user` for the selected kiosk."});
 	}
 
 	@Override

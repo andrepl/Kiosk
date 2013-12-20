@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public class SelectCommand extends PlayerCommand {
 	public SelectCommand(Kiosk plugin) {
-		super(plugin, "select", "select a shop by id", "kiosk.command.select", new String[] {"select help"});
+		super(plugin, "select", "Select a kiosk by id.", "kiosk.command.select", new String[] {"/kiosk select <id>", "Selects `id` as the current kiosk."});
 	}
 
 	@Override
