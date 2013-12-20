@@ -6,10 +6,15 @@ import org.bukkit.Location;
 
 public class Button extends Text {
 	public static class Icon {
-		public static String BUY = "⛁⇨❐";
-		public static String SELL = "❐⇨⛁";
-		public static String TELEPORT = "⇛☺⇛";
-		public static String STOCK = "↷⌂↶";
+
+		public static String BUY = "BUY";
+		public static String SELL = "SELL";
+		public static String TELEPORT = "WARP";
+		public static String STOCK = "STOCK";
+//		public static String BUY = "⛁⇨❐";
+//		public static String SELL = "❐⇨⛁";
+//		public static String TELEPORT = "⇛☺⇛";
+//		public static String STOCK = "↷⌂↶";
 	}
 
 	public static class Ends {

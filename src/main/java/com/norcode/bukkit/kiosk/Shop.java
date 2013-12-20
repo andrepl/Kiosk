@@ -41,7 +41,7 @@ public class Shop implements InventoryHolder {
 	private Double price = null;
 	private Integer quantity = null;
 	private EnumSet<StaffPermission> defaultPermissions;
-	private boolean _private = true;
+	private boolean _private = false;
 	private int stock = 0;
 	private double balance = 0.0;
 	private String depositAccount;

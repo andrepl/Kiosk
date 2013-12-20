@@ -82,13 +82,13 @@ public class SellCommand extends SelectedShopCommand {
 			int maxStackSize = shop.getItem().getMaxStackSize();
 			int stackSize = maxStackSize;
 			ItemStack stack;
-			while (qty > 0) {
-				if (qty < maxStackSize) {
-					stackSize = qty;
+			while (rem > 0) {
+				if (rem < maxStackSize) {
+					stackSize = rem;
 				} else {
 					stackSize = maxStackSize;
 				}
-				qty -= stackSize;
+				rem -= stackSize;
 				stack = shop.getItem().clone();
 				stack.setAmount(stackSize);
 				items.add(stack);
