@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.authors>metalhedd</project.authors>
         <project.main>com.norcode.bukkit.kiosk.Kiosk</project.main>
+        <project.softdepend>[]</project.softdepend>
         <project.depend>[Vault, PlayerID]</project.depend>
         <project.description>Best shops ever</project.description>
     </properties>

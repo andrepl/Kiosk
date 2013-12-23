@@ -2,7 +2,8 @@ name: ${project.name}
 author: ${project.authors}
 main: ${project.main}
 version: ${project.version}
-
+depend: ${project.depend}
+softdepend: ${project.softdepend}
 permissions:
 
   # actions
