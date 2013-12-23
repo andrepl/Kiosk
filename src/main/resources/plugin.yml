@@ -60,7 +60,7 @@ permissions:
     description: select a kiosk by id
     default: op
 
-  # /fs set command
+  # /kiosk set command
   kiosk.command.set:
     description: change shop settings
     default: op
@@ -93,7 +93,7 @@ permissions:
     description: set/toggle 'adminshop' status (infinite funds and stock)
     default: op
 
-  # /fs staff command
+  # /kiosk staff command
   kiosk.command.staff:
     description: manage shop staff
     default: op

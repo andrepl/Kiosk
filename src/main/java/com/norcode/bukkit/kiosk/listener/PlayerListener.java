@@ -39,11 +39,6 @@ public class PlayerListener implements Listener {
 		plugin.getServer().getPluginManager().registerEvents(this, this.plugin);
 	}
 
-	@EventHandler
-	public void onPlayerJoin(PlayerJoinEvent event) {
-		plugin.playerID.registerPlayer(event.getPlayer().getUniqueId(), event.getPlayer());
-	}
-
 	@EventHandler(ignoreCancelled=true)
 	public void onFrameDeath(EntityDamageEvent event) {
 		if (event.getEntity().getType() == EntityType.ITEM_FRAME) {

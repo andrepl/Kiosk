@@ -9,6 +9,7 @@ import com.norcode.bukkit.kiosk.listener.PlayerListener;
 import com.norcode.bukkit.kiosk.listener.ProtectionListener;
 import com.norcode.bukkit.kiosk.util.Lang;
 import com.norcode.bukkit.kiosk.util.Util;
+import com.norcode.bukkit.playerid.PlayerID;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -53,7 +54,6 @@ public class Kiosk extends JavaPlugin {
 			this.playerListener = new PlayerListener(this);
 			this.inventoryListener = new InventoryListener(this);
 			this.protectionListener = new ProtectionListener(this);
-			this.playerID = new PlayerID(this);
 			getCommand("kiosk").setExecutor(new KioskCommand(this));
 			StaffPermission.setDefaults(getConfig().getStringList("default-staff-permissions"));
 			this.datastore = new YamlDatastore(this);
@@ -118,7 +118,7 @@ public class Kiosk extends JavaPlugin {
 	}
 
 	public OfflinePlayer getOfflinePlayer(UUID id) {
-		return playerID.getPlayer(id);
+		return PlayerID.getOfflinePlayer(id);
 	}
 
 	public ItemStack getNewShopFrame(int qty) {
@@ -157,7 +157,6 @@ public class Kiosk extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		getDatastore().disable();
-		playerID.save();
 	}
 
 	public Economy getEconomy() {

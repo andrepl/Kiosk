@@ -58,7 +58,7 @@ public class SearchTask {
 		if (!active) {
 			return new Text(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + ">>").setHoverText("You are already viewing the last page");
 		} else {
-			return new Text(ChatColor.GOLD + "" + ChatColor.BOLD + ">>").setHoverText("Go to page " + (page+1)).setClick(ClickAction.RUN_COMMAND, "/fs results page " + (page+1));
+			return new Text(ChatColor.GOLD + "" + ChatColor.BOLD + ">>").setHoverText("Go to page " + (page+1)).setClick(ClickAction.RUN_COMMAND, "/kiosk results page " + (page+1));
 		}
 	}
 
