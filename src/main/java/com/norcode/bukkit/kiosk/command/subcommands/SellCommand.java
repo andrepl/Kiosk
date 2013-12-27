@@ -51,7 +51,7 @@ public class SellCommand extends SelectedShopCommand {
 			throw new Exception("Amount must be positive");
 		}
 
-		if (qty > (shop.getMaxStock() - shop.getStock())) {
+		if ((qty > (shop.getMaxStock() - shop.getStock())) && (!shop.isAdminShop())) {
 			throw new Exception("The shop can only hold " + (shop.getMaxStock() - shop.getStock()) + " more");
 		}
 
