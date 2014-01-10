@@ -2,10 +2,10 @@ package com.norcode.bukkit.kiosk.listener;
 
 import com.norcode.bukkit.kiosk.Kiosk;
 import com.norcode.bukkit.kiosk.Shop;
-
 import com.norcode.bukkit.kiosk.command.StaffPermission;
 import com.norcode.bukkit.kiosk.command.subcommands.InfoCommand;
 import com.norcode.bukkit.kiosk.util.Util;
+import com.norcode.bukkit.kiosk.util.chat.Text;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -26,7 +26,6 @@ import org.bukkit.event.hanging.HangingPlaceEvent;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.Sign;
@@ -110,6 +109,12 @@ public class PlayerListener implements Listener {
 					}
 				}
 				event.getPlayer().removeMetadata("placed-kiosk", plugin);
+			}
+		} else if (event.getClickedBlock().getType() == Material.WALL_SIGN) {
+
+			org.bukkit.block.Sign sign = (org.bukkit.block.Sign) event.getClickedBlock().getState();
+			if (sign.getLine(3).equals(Shop.SIGN_CODE)) {
+			    Util.send(event.getPlayer(), new Text("This sign belongs to a Kiosk! Hit the item frame to shop!"));
 			}
 		}
 	}
