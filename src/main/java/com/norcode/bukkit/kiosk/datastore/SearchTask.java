@@ -155,7 +155,7 @@ public class SearchTask {
 	public int run(int maxShops) {
 		int searched = 0;
 		while (searched < maxShops && shopIds.hasNext()) {
-			Shop shop = plugin.getDatastore().getShop(shopIds.next());
+			Shop shop = plugin.getStore().getShop(shopIds.next());
 			if (canSearch(shop)) {
 				if (shopMatches(shop)) {
 					results.add(shop);

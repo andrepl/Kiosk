@@ -64,7 +64,7 @@ public class StaffMemberGrantCommand extends StaffMemberSubcommand {
 			}
 		}
 		member.getPermissions().addAll(perms);
-		plugin.getDatastore().saveShop(shop);
+		plugin.getStore().saveShop(shop);
 		OfflinePlayer staff = plugin.getOfflinePlayer(member.getPlayerId());
 		String permStr = "";
 		for (StaffPermission p: perms) {

@@ -52,7 +52,7 @@ public class BuyCommand extends SelectedShopCommand {
 		} else {
 			throw new Exception("You do not have " + plugin.getEconomy().format(total));
 		}
-		plugin.getDatastore().saveShop(shop);
+		plugin.getStore().saveShop(shop);
 		shop.updateSign();
 		return true;
 	}
