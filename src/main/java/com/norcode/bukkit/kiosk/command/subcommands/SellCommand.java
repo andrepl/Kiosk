@@ -94,7 +94,7 @@ public class SellCommand extends SelectedShopCommand {
 				items.add(stack);
 			}
 			player.getInventory().removeItem(items.toArray(new ItemStack[0]));
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			shop.updateSign();
 			player.sendMessage("You successfully sold " + qty + " " + shop.getItemDisplayName() + " to " +
 					shop.getDisplayName() + " for " + plugin.getEconomy().format(total));

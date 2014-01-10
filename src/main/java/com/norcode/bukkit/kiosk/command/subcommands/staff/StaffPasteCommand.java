@@ -34,7 +34,7 @@ public class StaffPasteCommand extends SelectedShopCommand {
 			shop.getStaff().add(new StaffMember(member.getPlayerId(), new HashSet<StaffPermission>(member.getPermissions())));
 		}
 		player.sendMessage(staff.size() + " staff members were added to this shop");
-		plugin.getDatastore().saveShop(shop);
+		plugin.getStore().saveShop(shop);
 		return true;
 	}
 }

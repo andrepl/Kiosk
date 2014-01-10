@@ -59,7 +59,7 @@ public class DestroyCommand extends SelectedShopCommand {
 				if (sign != null) {
 					sign.setType(Material.AIR);
 				}
-				plugin.getDatastore().deleteShop(shop.getId());
+				plugin.getStore().deleteShop(shop.getId());
 			} else {
 				throw new Exception("Failed to deposit " + shop.getBalance() + " into your account! Cannot destroy the shop with funds in it!");
 			}

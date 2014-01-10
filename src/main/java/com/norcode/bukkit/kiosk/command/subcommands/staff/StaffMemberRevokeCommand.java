@@ -64,7 +64,7 @@ public class StaffMemberRevokeCommand extends StaffMemberSubcommand {
 			}
 		}
 		member.getPermissions().removeAll(perms);
-		plugin.getDatastore().saveShop(shop);
+		plugin.getStore().saveShop(shop);
 		OfflinePlayer staff = plugin.getOfflinePlayer(member.getPlayerId());
 		String permStr = "";
 		for (StaffPermission p: perms) {

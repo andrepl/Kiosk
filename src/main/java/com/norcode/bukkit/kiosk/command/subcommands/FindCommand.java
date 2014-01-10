@@ -108,7 +108,7 @@ public class FindCommand extends CommandHandler {
 				}
 			}
 		}
-		plugin.getDatastore().search(type, searchCriteria, searchString, sender);
+		plugin.getStore().search(type, searchCriteria, searchString, sender);
 		return true;
 	}
 

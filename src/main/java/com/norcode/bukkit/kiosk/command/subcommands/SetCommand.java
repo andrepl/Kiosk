@@ -64,7 +64,7 @@ public class SetCommand extends BaseCommand {
 		public boolean onCommand(Player player, Shop shop, Command command, String label, LinkedList<String> args) throws Exception {
 			if (args.size() == 0) {
 				shop.setIcon(null);
-				plugin.getDatastore().saveShop(shop);
+				plugin.getStore().saveShop(shop);
 				player.sendMessage("Shop icon cleared");
 			} else {
 				ChatArt icon = ChatArt.getByName(args.peek().toLowerCase());
@@ -72,7 +72,7 @@ public class SetCommand extends BaseCommand {
 					throw new Exception("Unknown Icon: " + args.peek());
 				} else {
 					shop.setIcon(icon);
-					plugin.getDatastore().saveShop(shop);
+					plugin.getStore().saveShop(shop);
 					player.sendMessage("Shop icon set to: " + icon.getName());
 				}
 			}
@@ -101,7 +101,7 @@ public class SetCommand extends BaseCommand {
 			}
 			if (args.size() == 0) {
 				shop.setItem(null);
-				plugin.getDatastore().saveShop(shop);
+				plugin.getStore().saveShop(shop);
 				shop.getItemFrame().setItem(new ItemStack(Material.AIR));
 				player.sendMessage("The shop Item has been cleared, place a new Item in the frame reactivate the shop.");
 				shop.updateSign();
@@ -157,7 +157,7 @@ public class SetCommand extends BaseCommand {
 			shop.setType(ShopType.SELLING);
 			shop.setPrice(price);
 			shop.setQuantity(qty);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			String message = "This shop is now selling " + shop.getQuantity();
 			message += " " + shop.getItemDisplayName() + " for ";
 			Double _price = shop.getPrice();
@@ -218,7 +218,7 @@ public class SetCommand extends BaseCommand {
 			shop.setType(ShopType.BUYING);
 			shop.setPrice(price);
 			shop.setQuantity(qty);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			String message = "This shop is now buying " + shop.getQuantity();
 			message += " " + shop.getItemDisplayName() + " for ";
 			Double _price = shop.getPrice();
@@ -252,7 +252,7 @@ public class SetCommand extends BaseCommand {
 				shop.setPrivate(!shop.isPrivate());
 
 			}
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			player.sendMessage("This shop is " + (shop.isPrivate() ? "now" : "no longer") + " private");
 			return true;
 		}
@@ -282,7 +282,7 @@ public class SetCommand extends BaseCommand {
 				}
 			}
 			shop.setName(name == "" ? null : name);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			player.sendMessage("This shop is now named '" + name + "'");
 			return true;
 		}
@@ -323,7 +323,7 @@ public class SetCommand extends BaseCommand {
 				}
 			}
 			shop.setName(name == "" ? null : name);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			return true;
 		}
 	}
@@ -351,7 +351,7 @@ public class SetCommand extends BaseCommand {
 
 			if (plugin.getEconomy().hasAccount(args.peek())) {
 				shop.setDepositAccount(args.pop());
-				plugin.getDatastore().saveShop(shop);
+				plugin.getStore().saveShop(shop);
 				player.sendMessage("Proceeds from this shop will be automatically deposited into the account: '" + shop.getDepositAccount() + "'");
 				return true;
 			} else {
@@ -383,7 +383,7 @@ public class SetCommand extends BaseCommand {
 				shop.setAdminShop(!shop.isAdminShop());
 
 			}
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			player.sendMessage("This shop is " + (shop.isAdminShop() ? "now" : "no longer") + " an Admin-Shop");
 			return true;
 

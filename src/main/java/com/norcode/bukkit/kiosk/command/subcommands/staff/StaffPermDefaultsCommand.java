@@ -113,7 +113,7 @@ public class StaffPermDefaultsCommand extends BaseCommand {
 			}
 
 			shop.getDefaultPermissions().addAll(perms);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			showDefaults(player, shop);
 			return true;
 		}
@@ -173,7 +173,7 @@ public class StaffPermDefaultsCommand extends BaseCommand {
 			}
 
 			shop.getDefaultPermissions().removeAll(perms);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			showDefaults(player, shop);
 			return true;
 		}
