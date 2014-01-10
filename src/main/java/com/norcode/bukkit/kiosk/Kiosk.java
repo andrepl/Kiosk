@@ -9,7 +9,7 @@ import com.norcode.bukkit.kiosk.listener.PlayerListener;
 import com.norcode.bukkit.kiosk.listener.ProtectionListener;
 import com.norcode.bukkit.kiosk.util.Lang;
 import com.norcode.bukkit.kiosk.util.Util;
-import com.norcode.bukkit.playerid.PlayerID;
+import com.norcode.bukkit.metalcore.MetalCorePlugin;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -23,7 +23,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.MaterialData;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,10 +32,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class Kiosk extends JavaPlugin {
+public class Kiosk extends MetalCorePlugin {
 
 	private PlayerListener playerListener;
-	public PlayerID playerID;
 	public static String LORE_1 = ChatColor.ITALIC + "" + ChatColor.GOLD + "Place this frame to open your own shop!";
 	public static String DISPLAY_NAME = "Kiosk";
 	private Datastore datastore;
@@ -47,6 +45,7 @@ public class Kiosk extends JavaPlugin {
 	private ShapedRecipe craftingRecipe;
 
 	public void onEnable() {
+        super.onEnable();
 		saveDefaultConfig();
 		if (setupEconomy()) {
 			loadRecipe();
@@ -118,7 +117,7 @@ public class Kiosk extends JavaPlugin {
 	}
 
 	public OfflinePlayer getOfflinePlayer(UUID id) {
-		return PlayerID.getOfflinePlayer(id);
+		return this.getOfflinePlayer(id);
 	}
 
 	public ItemStack getNewShopFrame(int qty) {
@@ -145,18 +144,19 @@ public class Kiosk extends JavaPlugin {
 	public Shop getSelectedShop(Player player) {
 		if (player.hasMetadata("selected-shop")) {
 			UUID uuid = UUID.fromString(player.getMetadata("selected-shop").get(0).asString());
-			return getDatastore().getShop(uuid);
+			return getStore().getShop(uuid);
 		}
 		return null;
 	}
 
-	public Datastore getDatastore() {
+	public Datastore getStore() {
 		return datastore;
 	}
 
 	@Override
 	public void onDisable() {
-		getDatastore().disable();
+        super.onDisable();
+		getStore().disable();
 	}
 
 	public Economy getEconomy() {

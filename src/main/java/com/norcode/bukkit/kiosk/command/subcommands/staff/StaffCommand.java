@@ -283,7 +283,7 @@ public class StaffCommand extends BaseCommand {
 				throw new Exception("More than 1 staff member matches '" + name + "'");
 			}
 			shop.getStaff().remove(matches.get(0));
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			op = plugin.getOfflinePlayer(matches.get(0).getPlayerId());
 			player.sendMessage(op.getName() + " is now a staff member");
 			return true;
@@ -332,7 +332,7 @@ public class StaffCommand extends BaseCommand {
 			}
 			StaffMember sm = new StaffMember(p.getUniqueId(), shop.getDefaultPermissions());
 			shop.getStaff().add(sm);
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			player.sendMessage(p.getName() + " is now a staff member for this shop.");
 			return true;
 		}

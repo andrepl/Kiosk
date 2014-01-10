@@ -20,7 +20,7 @@ public class SelectCommand extends PlayerCommand {
 	@Override
 	public List<String> onTabComplete(Player player, Command command, String label, LinkedList<String> args) {
 		List<String> results = new ArrayList<String>();
-		for (UUID id: plugin.getDatastore().allShopIds()) {
+		for (UUID id: plugin.getStore().allShopIds()) {
 			if (id.toString().toLowerCase().startsWith(id.toString().toLowerCase())) {
 				results.add(id.toString());
 			}
@@ -35,7 +35,7 @@ public class SelectCommand extends PlayerCommand {
 			return true;
 		}
 		UUID id = UUID.fromString(args.peek());
-		Shop shop = plugin.getDatastore().getShop(id);
+		Shop shop = plugin.getStore().getShop(id);
 		if (shop == null) {
 			throw new Exception("Couldn't find shop with id " + args.peek());
 		}

@@ -51,7 +51,7 @@ public class StaffMemberCopyCommand extends StaffMemberSubcommand {
 		}
 		OfflinePlayer op = plugin.getOfflinePlayer(matches.get(0).getPlayerId());
 		member.setPermissions(new HashSet<StaffPermission>(matches.get(0).getPermissions()));
-		plugin.getDatastore().saveShop(shop);
+		plugin.getStore().saveShop(shop);
 		OfflinePlayer target = plugin.getOfflinePlayer(member.getPlayerId());
 		player.sendMessage(target.getName() + " copied all permissions from " + op.getName());
 		return true;

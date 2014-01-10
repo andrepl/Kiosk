@@ -52,7 +52,7 @@ public class ProtectionListener implements Listener {
 					if (e.getType() == EntityType.ITEM_FRAME) {
 						entLoc = e.getLocation();
 						if (entLoc.getBlockY() == y && entLoc.getBlockZ() == z && entLoc.getBlockX() == x) {
-							shop = plugin.getDatastore().getShop(e.getUniqueId());
+							shop = plugin.getStore().getShop(e.getUniqueId());
 							if (shop != null) {
 								if (!shop.allow(event.getPlayer(), StaffPermission.DISPLAY)) {
 									event.setCancelled(true);
@@ -68,7 +68,7 @@ public class ProtectionListener implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void onHangingBreak(HangingBreakEvent event) {
-		Shop shop = plugin.getDatastore().getShop(event.getEntity().getUniqueId());
+		Shop shop = plugin.getStore().getShop(event.getEntity().getUniqueId());
 		if (shop != null) {
 			event.setCancelled(true);
 		}

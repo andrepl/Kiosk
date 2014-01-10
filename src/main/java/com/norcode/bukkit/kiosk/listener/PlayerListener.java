@@ -41,7 +41,7 @@ public class PlayerListener implements Listener {
 	@EventHandler(ignoreCancelled=true)
 	public void onFrameDeath(EntityDamageEvent event) {
 		if (event.getEntity().getType() == EntityType.ITEM_FRAME) {
-			Shop shop = plugin.getDatastore().getShop(event.getEntity().getUniqueId());
+			Shop shop = plugin.getStore().getShop(event.getEntity().getUniqueId());
 			if (shop != null) {
 				if (event instanceof EntityDamageByEntityEvent) {
 					Entity damager = ((EntityDamageByEntityEvent) event).getDamager();
@@ -64,7 +64,7 @@ public class PlayerListener implements Listener {
 	public void onPlayerInteractFrame(PlayerInteractEntityEvent event) {
 		if (event.getRightClicked().getType() == EntityType.ITEM_FRAME) {
 			ItemFrame frame = (ItemFrame) event.getRightClicked();
-			Shop shop = plugin.getDatastore().getShop((ItemFrame) event.getRightClicked());
+			Shop shop = plugin.getStore().getShop((ItemFrame) event.getRightClicked());
 			if (shop == null) {
 				return;
 			}
@@ -77,7 +77,7 @@ public class PlayerListener implements Listener {
 					if (shop.allow(event.getPlayer(), StaffPermission.CHANGE_ITEM)) {
 						frame.setItem(event.getPlayer().getItemInHand().clone());
 						shop.setItem(frame.getItem());
-						plugin.getDatastore().saveShop(shop);
+						plugin.getStore().saveShop(shop);
 					} else {
 						event.getPlayer().sendMessage(ChatColor.DARK_RED + "You don't have permission to set the item in this shop.");
 					}
@@ -128,9 +128,9 @@ public class PlayerListener implements Listener {
 				return;
 			}
 			ItemFrame frame = (ItemFrame) event.getEntity();
-			final Shop shop = plugin.getDatastore().createShop(frame);
+			final Shop shop = plugin.getStore().createShop(frame);
 			shop.setOwnerId(event.getPlayer().getUniqueId());
-			plugin.getDatastore().saveShop(shop);
+			plugin.getStore().saveShop(shop);
 			Block below = frame.getLocation().getBlock().getRelative(BlockFace.DOWN);
 			if (below == null || below.getType().equals(Material.AIR)) {
 				if (below.getRelative(frame.getAttachedFace()).getType().isSolid()) {

@@ -19,7 +19,7 @@ public class InventoryListener implements Listener {
 	public void onInventoryClose(InventoryCloseEvent event) {
 		if (event.getInventory().getHolder() instanceof Shop) {
 			((Shop) event.getInventory().getHolder()).releaseInventory();
-			plugin.getDatastore().saveShop((Shop) event.getInventory().getHolder());
+			plugin.getStore().saveShop((Shop) event.getInventory().getHolder());
 		}
 	}
 
