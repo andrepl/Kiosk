@@ -1,8 +1,8 @@
 package com.norcode.bukkit.kiosk.util;
 
 import com.norcode.bukkit.kiosk.Kiosk;
-import net.minecraft.server.v1_7_R1.Item;
-import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemStack;
+import net.minecraft.server.v1_7_R3.Item;
+import org.bukkit.craftbukkit.v1_7_R3.inventory.CraftItemStack;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
@@ -45,7 +45,7 @@ public class Lang {
 
 
 	public static String translatableFromStack(ItemStack stack) {
-		net.minecraft.server.v1_7_R1.ItemStack nms = CraftItemStack.asNMSCopy(stack);
+		net.minecraft.server.v1_7_R3.ItemStack nms = CraftItemStack.asNMSCopy(stack);
 		Item item = nms.getItem();
 		return item.a(nms);
 	}
@@ -60,7 +60,7 @@ public class Lang {
 	}
 
 	public static String translatableFromEnchantment(Enchantment ench) {
-		net.minecraft.server.v1_7_R1.Enchantment nms = net.minecraft.server.v1_7_R1.Enchantment.byId[ench.getId()];
+		net.minecraft.server.v1_7_R3.Enchantment nms = net.minecraft.server.v1_7_R3.Enchantment.byId[ench.getId()];
 		if (nms == null) {
 			return ench.getName();
 		} else {

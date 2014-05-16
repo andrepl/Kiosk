@@ -9,7 +9,7 @@ import com.norcode.bukkit.kiosk.util.chat.Text;
 import com.norcode.bukkit.kiosk.util.chat.Trans;
 import com.norcode.bukkit.kiosk.util.chat.ClickAction;
 import net.milkbowl.vault.economy.Economy;
-import net.minecraft.server.v1_7_R1.IChatBaseComponent;
+import net.minecraft.server.v1_7_R3.IChatBaseComponent;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

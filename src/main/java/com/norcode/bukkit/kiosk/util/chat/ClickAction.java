@@ -1,6 +1,6 @@
 package com.norcode.bukkit.kiosk.util.chat;
 
-import net.minecraft.server.v1_7_R1.EnumClickAction;
+import net.minecraft.server.v1_7_R3.EnumClickAction;
 
 public enum ClickAction {
 	OPEN_URL(EnumClickAction.OPEN_URL),

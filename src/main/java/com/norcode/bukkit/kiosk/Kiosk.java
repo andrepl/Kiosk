@@ -9,7 +9,6 @@ import com.norcode.bukkit.kiosk.listener.PlayerListener;
 import com.norcode.bukkit.kiosk.listener.ProtectionListener;
 import com.norcode.bukkit.kiosk.util.Lang;
 import com.norcode.bukkit.kiosk.util.Util;
-import com.norcode.bukkit.metalcore.MetalCorePlugin;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -23,6 +22,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.MaterialData;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class Kiosk extends MetalCorePlugin {
+public class Kiosk extends JavaPlugin {
 
 	private PlayerListener playerListener;
 	public static String LORE_1 = ChatColor.ITALIC + "" + ChatColor.GOLD + "Place this frame to open your own shop!";
@@ -117,7 +117,7 @@ public class Kiosk extends MetalCorePlugin {
 	}
 
 	public OfflinePlayer getOfflinePlayer(UUID id) {
-		return this.getOfflinePlayer(id);
+		return getServer().getOfflinePlayer(id);
 	}
 
 	public ItemStack getNewShopFrame(int qty) {

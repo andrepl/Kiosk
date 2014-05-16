@@ -1,6 +1,6 @@
 package com.norcode.bukkit.kiosk.util.chat;
 
-import net.minecraft.server.v1_7_R1.EnumHoverAction;
+import net.minecraft.server.v1_7_R3.EnumHoverAction;
 
 public enum HoverAction {
 	SHOW_TEXT(EnumHoverAction.SHOW_TEXT),

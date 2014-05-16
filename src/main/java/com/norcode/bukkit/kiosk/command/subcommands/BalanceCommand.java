@@ -3,10 +3,10 @@ package com.norcode.bukkit.kiosk.command.subcommands;
 import com.norcode.bukkit.kiosk.Kiosk;
 import com.norcode.bukkit.kiosk.Shop;
 import com.norcode.bukkit.kiosk.command.SelectedShopCommand;
-import net.minecraft.server.v1_7_R1.ItemStack;
+import net.minecraft.server.v1_7_R3.ItemStack;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_7_R3.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 
 import java.util.LinkedList;

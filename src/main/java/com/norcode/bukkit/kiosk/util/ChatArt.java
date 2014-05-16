@@ -1,7 +1,7 @@
 package com.norcode.bukkit.kiosk.util;
 
 import com.norcode.bukkit.kiosk.util.chat.Text;
-import net.minecraft.server.v1_7_R1.IChatBaseComponent;
+import net.minecraft.server.v1_7_R3.IChatBaseComponent;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
